@@ -1,121 +1,170 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage[margin=1in]{geometry}
-\usepackage{enumerate}
+%-------------------------
+% Resume in Latex
+% Author : John W. Hall
+% Website: https://github.com/halljw
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
 \usepackage{enumitem}
-\setlist[itemize]{leftmargin=*}
-\usepackage{setspace}
-\singlespacing
-\pagenumbering{gobble}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
 
-\title{John Hall's Resume}
 
-\author{John W. Hall}
-\date{Dec 2016}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newenvironment{myitemize}
+{ \begin{itemize}[label=$\circ$]
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}     }
+{ \end{itemize}                  } 
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% HEADER
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{center}
-\textbf{{\Large John W. Hall}}\\
-{\large 201 W. Springfield Ave $\vert$ APT 711 $\vert$ Champaign, IL 61820\\
-jwhall5@illinois.edu $\vert$ 954-632-3507 $\vert$ github.com/jwhall5}\\
-\end{center}
-\vspace{-3mm}
-\par\hbox{\textbf{{\large Education\strut}}}\hrule
-\noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}\\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% EDUCATION
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\textbf{M.A.} in Linguistics, \textbf{University of Illinois}, Urbana, IL
-\hfill
-\textit{May 2017}\\
-\indent Major area: Computational Linguistics\\
-\textbf{B.A.} in Biomedical Engineering, \textbf{Vanderbilt University}, Nashville, TN
-\hfill
-\textit{May 2012}\\
-\textbf{\textit{Graduate Fellowship}} - Award providing graduate educational training\\
-\textbf{\textit{Cornelius Vanderbilt Scholar}} - Full academic scholarship and research stipend\\
- \\
-\vspace{-5mm}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TEACHING EXPERIENCE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\par\hbox{\textbf{{\large Teaching Experience\strut}}}\hrule
-\noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}\\
-%%%%%%%%%%%%%%%%%%%%
-% INSTRUCTOR LING270
-%%%%%%%%%%%%%%%%%%%%
-\textbf{\textit{Instructor}, University of Illinois}, Champaign, IL
-\hfill
-\textit{Jan to May 2016/2017}\\
-\textbf{Ling 270: \textit{“Language, Technology, and Society”}}
-\vspace{-2mm}
-\begin{itemize}
-\itemsep-1.5mm
-    \item Instructor for 25+ undergraduate-level students in lecture format pertaining to historical and modern language technologies and their social implications and ramifications for human-machine interaction
-    \item Constructed relevant course material including lesson plans, assignments, and examinations
-\end{itemize}
-%%%%%%%%%%%%%%%%%%%%
-% INSTRUCTOR ESL 506
-%%%%%%%%%%%%%%%%%%%%
-\textbf{\textit{Instructor}, University of Illinois}, Champaign, IL
-\hfill
-\textit{Aug 2016 to Present}\\
-\textbf{ESL 506: \textit{“Oral Communication for ITAs”}}
-\vspace{-2mm}
-\begin{itemize}
-\itemsep-1.5mm
-    \item Led instruction and discussion for 12 graduate-level international students qualifying for TA-ships in a variety of scientific disciplines practicing effective communication and presentation skills
-\end{itemize}
-%%%%%%%%%%%%%%%%%%%%
-% TA LING402
-%%%%%%%%%%%%%%%%%%%%
-\textbf{\textit{Teaching Assistant}, University of Illinois}, Champaign, IL
-\hfill
-\textit{Aug to Dec 2016}\\
-\textbf{Ling 402: \textit{“Tools and Technologies for Speech and Language Processing”}}
-\vspace{-2mm}
-\begin{itemize}
-\itemsep-1.5mm
-    \item Assisted with full scope of academic responsibilities including guest lecturing, grading, and assisting graduate and undergraduate students on tools and methods for natural language processing (NLP)
-    \item Helped prepare students with no computer science background to address tasks requiring basic skills in programming and knowledge of data structures primarily in the Python programming language
-    \item Provided guidance on foundational tasks of NLP including tokenization, stemming and POS-tagging as well as corresponding implementations using statistical methods or the Natural Language Toolkit
-\end{itemize}
-%%%%%%%%%%%%%%%%%%%%
-% INSTRUCTOR TPR
-%%%%%%%%%%%%%%%%%%%%
-\textbf{\textit{Classroom Instructor and Tutor}, The Princeton Review}
-\hfill
-\textit{Jan 2012 to Present}\\
-\vspace{-6mm}
-\begin{itemize}
-\itemsep-1.5mm
-    \item Prepared lesson plans and lectured a combined 1500 hours in small classroom settings, private tutoring sessions, and online classrooms
-    \item Outlined and presented full range of science content according to a college-level syllabus including physics, general chemistry, organic chemistry, and biology
-    \item Instructed post-graduate, college, and high school pupils on effective problem solving strategies for improving performance in college courses and on standardized tests including the MCAT and SAT
-\end{itemize}
-\vspace{2mm}
-\par\hbox{\textbf{{\large Work Experience\strut}}}\hrule
-\noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}\\
-\textbf{\textit{Biomedical Patent Examiner}, USPTO}, Alexandria, VA
-\hfill
-\textit{Jun 2012 to Oct 2013}\\
-\vspace{-6mm}
-\begin{itemize}
-\itemsep-1.5mm
-    \item Represented official positions of the USPTO in corresponding with inventors and representative entities regarding the technical and legal merits of innovative technologies
-    \item Determined whether patent applications satisfied legal requirements in accordance with US patent code and presented arguments in favor of or against the legality of applications
-    \item Evaluated whether invention specifications met written and descriptive requirements such that a person of ordinary skill in the art would appreciate the metes and bounds of the claimed invention
-    \item Conducted detail-oriented database searches and guided applicants in understanding how prior art anticipated or obviated their claimed invention
-    \item Explained the legal restrictions of the patent code and composed legal actions guiding intellectual property applications towards allowance
-\end{itemize}
-\vspace{1mm}
-\par\hbox{\textbf{{\large Skills and Interests\strut}}}\hrule
-\noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}\\
-Natural Language Processing, Machine Learning, Computational Linguistics, Python, Java, R, LaTeX
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{http://github.com/halljw}{\Large John W. Hall}} & Email : \href{mailto:halljw@seas.upenn.edu}{halljw@seas.upenn.edu}\\
+  \href{http://github.com/halljw}{http://github.com/halljw} & Mobile : 954-632-3507 \\
+\end{tabular*}
 
 
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Pennsylvania}{Philadelphia, PA}
+      {Master of Science in Computer and Information and Technology}{Aug. 2017 -- May 2019}
+    \resumeSubheading
+      {University of Illinois}{Champaign, IL}
+      {Master of Arts in Linguistics;  GPA: 3.91}{Aug. 2015 -- May 2017}
+      \resumeSubheading
+      {Vanderbilt University}{Nashville, TN}
+      {Bachelor of Engineering in Biomedical Engineering; GPA: 3.52}{Aug. 2008 -- May 2012}
+  \resumeSubHeadingListEnd
+
+%-----------MA THESIS-----------------
+\section{MA Thesis}
+\textbf{ \textit{``Examination of Machine Learning Methods for Multi-label Classification of IP Documents''}}
+  \begin{myitemize}%[label=$\circ$]
+    \item Applied variety of machine learning techniques to classification of a corpus of US patent grants
+    \item Constructed intellectual property corpus by bulk download of data, cleaning xml-tags, tokenization,
+counting and storing of text data
+    \item Implemented multi-class document classifiers using the python sci-kit learn library including
+Naïve-Bayes, neural network, decision tree, support-vector-machine, and logistic regression
+    \item Examined effectiveness of classifiers in multi-label output using a one-vs-all implementation
+  \end{myitemize}
+
+ 
+%-----------TEACHING EXPERIENCE-----------------
+\section{Teaching Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {LING 402: ``Tools and Technologies for Speech and Language Processing''}{Champaign, IL}
+      {TA, University of Illinois}{Aug. -- Dec 2016}
+      \begin{myitemize}
+        \item Guest-lectured and held office hours for introductory computing course of 40+ graduate and undergraduate linguistics students focusing on basic computing tools for natural language processing.
+        \item Topics included the Linux command line, shell scripting, Python programming, the Natural Language Toolkit library, proper documentation, version control with git, and introductory data structures
+        \item Constructed shell scripts to facilitate and automate grading of written and coded assignments
+        \item Final project consisted of implementing the IBM Model 1 Statistical Machine Translator
+        \item Assignments included implementing a spellchecker for orthography of Central Alaskan Yupik and code to transcribe Yupik orthography to phonetic representations reflecting phonological constraints
+      \end{myitemize}
+
+    \resumeSubheading
+      {LING 270: ``Language, Technology, and Society''}{Champaign, IL}
+      {Instructor, University of Illinois}{Jan. -- May 2016/2017}
+      \begin{myitemize}
+        \item Instructor for 30+ undergraduate-level students in lecture format pertaining to historical and modern language technologies and their social implications
+        \item Led lecture and discussion of international writing systems and technologies with a focus on technical details, big-picture functions, and long-term ramifications for human-machine interactions
+        \item Constructed relevant course material including lesson plans, assignments, quizzes, and examinations
+      \end{myitemize}
+
+  \resumeSubHeadingListEnd
+
+%-----------WORK EXPERIENCE-----------------
+\section{Work Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Biomedical Patent Examienr}{Alexandria, VA}
+      {United States Patent and Trademark Office}{Jan. 2012 -- Oct. 2013}
+      \begin{myitemize}
+        \item Represented official positions of the USPTO in corresponding with inventors and representative entities regarding the technical and legal merits of innovative technologies
+        \item Determined whether patent applications satisfied legal requirements in accordance with US patent code and presented arguments in favor of or against the legality of applications
+        \item Evaluated whether invention specifications met written and descriptive requirements such that a person of ordinary skill in the art would appreciate the metes and bounds of the claimed invention
+      \end{myitemize}
+
+  \resumeSubHeadingListEnd
+
+%
+%--------PROGRAMMING SKILLS------------
+%\section{Programming Skills}
+% \resumeSubHeadingListStart
+%   \item{
+%     \textbf{Languages}{: Python, Java, R}
+%     \hfill
+%     \textbf{Technologies}{: }
+%   }
+% \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
 \end{document}
